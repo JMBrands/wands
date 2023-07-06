@@ -1,4 +1,4 @@
-package com.example;
+package org.eu.net.jmbrands;
 
 import net.fabricmc.api.ClientModInitializer;
 
