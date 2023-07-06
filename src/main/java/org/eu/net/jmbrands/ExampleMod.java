@@ -34,8 +34,6 @@ public class ExampleMod implements ModInitializer {
         // Proceed with mild caution.
         LOGGER.info("Hello Fabric world!");
         Registry.register(Registries.ITEM_GROUP,ITEM_GROUP_ID ,ITEM_GROUP);
-        ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP,ITEM_GROUP_ID)).register(content -> {
-            content.add(TEST_ITEM);
-        });
+        ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP,ITEM_GROUP_ID)).register(content -> content.add(TEST_ITEM));
     }
 }
