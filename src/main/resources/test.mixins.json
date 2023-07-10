@@ -3,7 +3,7 @@
 	"package": "org.eu.net.jmbrands.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-      "ExampleMixin"
+      "WandMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -12,28 +12,34 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import net.minecraft.util.Rarity;
+import org.eu.net.jmbrands.wand.FireWand;
 
 
-public class ExampleMod implements ModInitializer {
+public class WandMod implements ModInitializer {
     // This logger is used to write text to the console and the log file.
     // It is considered best practice to use your mod id as the logger's name.
     // That way, it's clear which mod wrote info, warnings, and errors.
-    public static final Logger LOGGER = LoggerFactory.getLogger("test");
-    public static final CustomItem TEST_ITEM = Registry.register(Registries.ITEM, new Identifier("test", "test_item"), new CustomItem(new FabricItemSettings()));
-    public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(TEST_ITEM))
-            .displayName(Text.translatable("itemGroup.test.test_group"))
+    public static final FireWand FIRE_WAND = Registry.register(
+            Registries.ITEM,
+            new Identifier( "wands", "fire_wand"),
+            new FireWand(new FabricItemSettings()
+                    .maxCount(1)
+                    .fireproof()
+                    .rarity(Rarity.EPIC)
+            )
+    );
+    public static final ItemGroup WAND_GROUP = FabricItemGroup.builder()
+            .icon(() -> new ItemStack(FIRE_WAND))
+            .displayName(Text.translatable("itemGroup.wands.wand_group"))
             .build();
-    public static final Identifier ITEM_GROUP_ID = new Identifier("test", "test_group");
+    public static final Identifier WAND_GROUP_ID = new Identifier("wands", "wand_group");
     @Override
     public void onInitialize() {
         // This code runs as soon as Minecraft is in a mod-load-ready state.
         // However, some things (like resources) may still be uninitialized.
         // Proceed with mild caution.
-        LOGGER.info("Hello Fabric world!");
-        Registry.register(Registries.ITEM_GROUP,ITEM_GROUP_ID ,ITEM_GROUP);
-        ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP,ITEM_GROUP_ID)).register(content -> content.add(TEST_ITEM));
+        Registry.register(Registries.ITEM_GROUP,WAND_GROUP_ID ,WAND_GROUP);
+        ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP,WAND_GROUP_ID)).register(content -> content.add(FIRE_WAND));
     }
 }

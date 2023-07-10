@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " IR",
+    " SI",
+    "S  "
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:blaze_rod"
+    },
+    "R": {
+      "item": "minecraft:fire_charge"
+    }
+  },
+  "result": {
+    "item": "wands:fire_wand",
+    "count": 1
+  }
+
+}

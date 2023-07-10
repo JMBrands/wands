@@ -1,25 +1,25 @@
 {
 	"schemaVersion": 1,
-	"id": "test",
+	"id": "wandmod",
 	"version": "${version}",
-	"name": "Test mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Wand mod",
+	"description": "Some custom wands",
 	"authors": [
-		"Me!"
+		"JMBrands"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "http://jmbrands.net.eu.org",
+		"sources": "https://github.com/JMBrands/test-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/test/icon.png",
+	"icon": "assets/wands/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "org.eu.net.jmbrands.ExampleMod"
+          "org.eu.net.jmbrands.WandMod"
 		],
 		"client": [
-          "org.eu.net.jmbrands.ExampleModClient"
+          "org.eu.net.jmbrands.WandModClient"
 		]
 	},
 	"mixins": [
